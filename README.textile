@@ -1,14 +1,9 @@
-Radiant CMS Rake n' Bake Plugin
-=============
+h1. Radiant CMS Rake n' Bake Plugin
 
 Rake tasks for use with Radiant CMS designed to work in conjunction with "Freemind":http:freemind.sourceforge.net/ free mind-mapping software.
 
 To use in Radiant site:
-<pre>
-<code>
-git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bake
-</code>
-</pre>
+<code>git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bake</code>
 
 h2. Requirements
 
@@ -36,14 +31,12 @@ h2. Why so stuck on Freemind html files?
 
 Freemind mind-maps are quick, easy and free. The generated files are always consistent a therefore much easier to parse and the rake tasks are less error prone.  You could generate the html by hand, but the whole idea behind Rake n' Bake is to get it done ASAP.  With Freemind you can show a client, visually, a list of all their pages and within minutes have them editable in Radiant.  Creating 150 pages with many parent child relationships via the admin interface is no fun.
 
-Rake n' Bake?
-=================
+h2. Rake n' Bake?
 
 Rake n' Bake is a pun of the term "Shake n' Bake" "YouTube":http://www.youtube.com/watch?v=9qEwBi1NyBI
 
 Basically, "lets get this done!"
 
-License
--------
+h4. License
 
 MIT License, under the same terms as Ruby.
