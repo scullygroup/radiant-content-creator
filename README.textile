@@ -9,13 +9,13 @@ git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bak
 
 h2. Requirements
 
-rake 0.8.3
-hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/
-harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/
+rake 0.8.3 <br />
+hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/ <br />
+harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/ <br />
 
 h2. Create Pages from html files generated with Freemind
 
-Freemind is a mind-mapping software that can be used to create sitemaps for large complicated websites.  Before a site makes it to Radian CMS, create a mindmap of your page structure with child named "primary navigation" with all your Radiant pages named as you would name the title of the page ex: "Shake and Bake"  In these titles anything you put in ()'s will be filtered out by the system, this is by design so you can put comments in the title and they won't transfer over to the Radiant pages. You can then export the mindmap as xhtml with javascript from mindmap. File > Export > As XHTML (Javascript Version), and save that file to your public folder in your Radiant Site.  You can save it as the default the rake task uses "sitemap.html" or a custom name, and then pass the argument in the rake task.
+Freemind is a mind-mapping software that can be used to create sitemaps for large complicated websites.  Before a site makes it to Radian CMS, create a mindmap of your page structure with child named "primary navigation" with all your Radiant pages named as you would name the title of the page ex: "Shake and Bake"  In these titles anything you put in ()'s will be filtered out by the system, this is by design so you can put comments in the title and they won't transfer over to the Radiant pages. You can then export the mindmap as xhtml with javascript from Freemind. File > Export > As XHTML (Javascript Version), and save that file to your public folder in your Radiant Site.  You can save it as the default the rake task uses "sitemap.html" or a custom name, and then pass the argument in the rake task.
 
 If you add to a sitemap.html, the task will let you know those pages existed and only create the new pages.  If you rename a page it will create a new page, it will not rename the existing page and will never remove pages.
 
@@ -36,7 +36,7 @@ Freemind mind-maps are quick, easy and free. The generated files are always cons
 Rake n' Bake?
 =================
 
-Rake n' Bake is a pun of the term "Shake n' Bake" "YouTube:":http://www.youtube.com/watch?v=9qEwBi1NyBI
+Rake n' Bake is a pun of the term "Shake n' Bake" "YouTube":http://www.youtube.com/watch?v=9qEwBi1NyBI
 
 Basically, "lets get this done!"
 
