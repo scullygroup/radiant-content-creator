@@ -5,7 +5,7 @@ Rake tasks for use with Radiant CMS designed to work in conjunction with "Freemi
 To use in Radiant site:
 <pre>
   
-  git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bake
+git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bake
   
 </pre>
 
