@@ -3,11 +3,11 @@ h1. Radiant CMS Rake n' Bake Plugin
 Rake tasks for use with Radiant CMS designed to work in conjunction with "Freemind":http:freemind.sourceforge.net/ free mind-mapping software.
 
 To use in Radiant site:
-<code>
+<pre>
   
   git clone git://github.com/scullygroup/rake-n-bake.git vendor/plugins/rake_n_bake
   
-</code>
+</pre>
 
 h2. Requirements
 
