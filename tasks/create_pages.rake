@@ -5,7 +5,7 @@ require 'titleizer'
 namespace :create do
   namespace :page do
      
-     desc 'creates pages from html sitemap generated from mindmap'
+     desc 'Creates radiant pages from html sitemap generated from a Freemind mindmap.'
      task :fromhtml, :file_name, :needs => :environment do |t, args|
        #set the default filename to sitemap.html
        args.with_defaults(:file_name => "sitemap.html")
@@ -13,6 +13,7 @@ namespace :create do
        
      end
      
+     desc 'Creates a single radiant page as a child of the supplied path.'
      task :child, :name, :parent, :needs => :environment do |t, args|
         args.with_defaults(:name => "generated", :parent => "")
         existing_page = Page.find_by_url("/#{args.parent}#{slugify(args.name)}")

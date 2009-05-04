@@ -11,9 +11,9 @@ To use in Radiant site:
 
 h2. Requirements
 
-rake 0.8.3 <br />
-hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/ <br />
-harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/ <br />
+rake 0.8.3
+hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/
+harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/
 
 h2. Create Pages from html files generated with Freemind
 
