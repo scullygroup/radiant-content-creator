@@ -45,26 +45,46 @@ Phasellus turpis turpis, scelerisque sit amet, accumsan vel, sollicitudin a, eli
         
         # get the base ul where the sitemap begins
         document = @doc.at('#base ul li').children_of_type('ul')
-
+        
+        # get the type of tag we need to search for
+        div = (@doc/"#base/ul/li").search("div").first
+        span = (@doc/"#base/ul/li").search("span").first
+        
+        tag =""
+        
+        if !div.nil?
+          tag = div.name
+        end
+        
+        if !span.nil?
+          tag = span.name
+        end
+        
+        # out put the name of the first tag
+        puts "using first element of #{tag}";
+        
         for ulparent in document
-          search_ul(ulparent, '/', true)
+          search_ul(ulparent, '/', true, tag)
         end
 
       end
 
-      def search_ul(item, path, ignore_first_level)
+      def search_ul(item, path, ignore_first_level, title_tag)
         lis = item.children_of_type("li")
-
+        
         for li in lis
           # create our title variables and find the span in the li to get the page title
           item_title = ""
           item_slug = ""
-          spans = li.children_of_type("span")
+          spans = li.children_of_type("#{title_tag}")
 
           # get the titles and use the slugify and titleify to create sanitized page titles
           for span in spans
             item_slug = slugify(span.inner_text)
             item_title = titleify(span.inner_text)
+            
+            # puts "current tile tag #{item_slug} #{item_title}/"
+            
           end
           
           # this block looks for only the item that matches primary-navigation its organized this way to match the way mindmap outputs xhtml
@@ -72,7 +92,7 @@ Phasellus turpis turpis, scelerisque sit amet, accumsan vel, sollicitudin a, eli
             lists = li.children_of_type("ul")
             for list in lists
               # recurse through primary navigations children with the given url path of / to match radients page structure
-              search_ul(list, "/", false)
+              search_ul(list, "/", false, title_tag)
             end
           else
             if !ignore_first_level           
@@ -104,7 +124,7 @@ Phasellus turpis turpis, scelerisque sit amet, accumsan vel, sollicitudin a, eli
 
               # the loops through the li items in the ordered list to find each child page
               for list in lists
-                search_ul(list, "#{path}#{item_slug.to_s}/", false)
+                search_ul(list, "#{path}#{item_slug.to_s}/", false, title_tag)
               end
             end
           end
