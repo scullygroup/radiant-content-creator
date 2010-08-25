@@ -1,5 +1,4 @@
 require 'hpricot'
-require 'titleizer'
 
 # page creation tasks
 namespace :create do

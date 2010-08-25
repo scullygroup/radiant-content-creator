@@ -1,17 +1,16 @@
-h1. Radiant CMS Polisher Rake Tasks
+h1. Radiant CMS Content Creator Rake Tasks
 
-Rake tasks for use with Radiant CMS designed speed up building and populating a Radiant site.
+Rake tasks for use with Radiant CMS designed speed up building and populating a Radiant site quickly and painlessly.
 
 To use in Radiant site:
-<pre>git clone git://github.com/scullygroup/radiant-rake-n-bake.git vendor/plugins/rake_n_bake</pre>
+<pre>git clone git://github.com/scullygroup/radiant-content-creator.git vendor/plugins/content_creator</pre>
 
 h2. Requirements
 
 rake 0.8.3
 hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/
-harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/
 
-h2. Page Generation
+h2. Page Generation Tasks
 
 These tasks are designed to use a freemind mindmap and help populate a page tree structure with the pages your client wants.
 
@@ -21,11 +20,16 @@ Freemind is a mind-mapping software that can be used to create sitemaps for larg
 
 If you add to a sitemap.html, the task will let you know those pages existed and only create the new pages.  If you rename a page it will create a new page, it will not rename the existing page and will never remove pages.
 
-* rake create:page:fromhtml - Load pages from "/public/sitemap.html" to the radiant site root "/" that are children of the "primary-navigation" node in your sitemap.html see examples/ for example structure.
-* rake create:page:fromhtml[filename] - Load pages from "/public/filename" to the radiant site root.
+Load pages from "/public/sitemap.html" to the radiant site root "/" that are children of the "primary-navigation" node in your sitemap.html see examples/ for example structure.
+
+<code>rake create:page:fromhtml</code>
+
+Load pages from "/public/filename.html" to the radiant site root.
+
+<code>rake create:page:fromhtml[filename.html]</code>
 
 
-h3. Create single pages with a rake task
+h3. Create single pages
 
 To add a single page without having to use the admin interface:
 
