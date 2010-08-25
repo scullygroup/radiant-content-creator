@@ -55,11 +55,8 @@ h3. Layouts
 
 To create the following basic layouts run this rake task <pre>rake create:layouts</pre>
 
-* head
-* header
-* main-navigation
-* sub-nav
-* footer
+* home-layout
+* interior-layout
 
 h2. Why Freemind?
 
