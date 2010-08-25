@@ -1,6 +1,6 @@
-h1. Radiant CMS Rake n' Bake Plugin
+h1. Radiant CMS Polisher Rake Tasks
 
-Rake tasks for use with Radiant CMS designed to work in conjunction with "Freemind":http:freemind.sourceforge.net/ free mind-mapping software.
+Rake tasks for use with Radiant CMS designed speed up building and populating a Radiant site.
 
 To use in Radiant site:
 <pre>git clone git://github.com/scullygroup/radiant-rake-n-bake.git vendor/plugins/rake_n_bake</pre>
@@ -11,7 +11,11 @@ rake 0.8.3
 hpricot "http://github.com/why/hpricot/":http://github.com/why/hpricot/
 harukizaemon-titleizer "http://github.com/harukizaemon/titleizer/":http://github.com/harukizaemon/titleizer/
 
-h2. Create Pages from html files generated with Freemind
+h2. Page Generation
+
+These tasks are designed to use a freemind mindmap and help populate a page tree structure with the pages your client wants.
+
+h3. Create Pages from html files generated with Freemind
 
 Freemind is a mind-mapping software that can be used to create sitemaps for large complicated websites.  Before a site makes it to Radian CMS, create a mindmap of your page structure with child named "primary navigation" with all your Radiant pages named as you would name the title of the page ex: "Shake and Bake"  In these titles anything you put in ()'s will be filtered out by the system, this is by design so you can put comments in the title and they won't transfer over to the Radiant pages. You can then export the mindmap as xhtml with javascript from Freemind. File > Export > As XHTML (Javascript Version), and save that file to your public folder in your Radiant Site.  You can save it as the default the rake task uses "sitemap.html" or a custom name, and then pass the argument in the rake task.
 
@@ -21,25 +25,43 @@ If you add to a sitemap.html, the task will let you know those pages existed and
 * rake create:page:fromhtml[filename] - Load pages from "/public/filename" to the radiant site root.
 
 
-h2. Create single pages with a rake task
+h3. Create single pages with a rake task
 
 To add a single page without having to use the admin interface:
 
 * rake create:page:child[title,/path-to-a-radiant/page-parent] - creates a single page as a child of the passed url, default page url is "/" This task also fills in 2 paragraphs of lorem ipsum.
 
-h2. Why so stuck on Freemind html files?
+h2. Snippet/Layout Generation
+
+The default snippets with each "design" radiant provides are a good start, but these provide a nice general structure to a blank radiant loadout.  Very minimal with only basic doctype and typical JS inclusion.
+
+h3. Snippets
+
+To create the following basic snippets run this rake task <code>rake create:snippets</code>
+
+* head
+* header
+* main-navigation
+* sub-nav
+* footer
+
+h3. Layouts
+
+To create the following basic layouts run this rake task <code>rake create:layouts</code>
+
+* head
+* header
+* main-navigation
+* sub-nav
+* footer
+
+h2. Why Freemind?
 
 Freemind mind-maps are quick, easy and free. The generated files are always consistent a therefore much easier to parse and the rake tasks are less error prone.  You could generate the html by hand, but the whole idea behind Rake n' Bake is to get it done ASAP.  With Freemind you can show a client, visually, a list of all their pages and within minutes have them editable in Radiant.  Creating 150 pages with many parent child relationships via the admin interface is no fun.
 
 h2. Confused?
 
 Check out the examples folder to see what a mind-map looks like, and the html it generates.
-
-h2. Rake n' Bake?
-
-Rake n' Bake is a pun of the term "Shake n' Bake" "YouTube":http://www.youtube.com/watch?v=9qEwBi1NyBI
-
-Basically, "lets get this done!"
 
 h4. License
 
