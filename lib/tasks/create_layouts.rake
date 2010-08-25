@@ -8,17 +8,17 @@ namespace :create do
       Layout.new do |s|
         s.name = "home-layout"
         s.content = 
-          '<r:snippet name="head" />
-           <body>
+'<r:snippet name="head" />
+ <body>
 
-            <div id="wrapper">
-              <r:snippet name="main-navigation" />
-              <r:content />
-              <r:snippet name="footer" />
-            </div>
+  <div id="wrapper">
+    <r:snippet name="main-nav" />
+    <r:content />
+    <r:snippet name="footer" />
+  </div>
 
-          </body>
-          </html>'
+</body>
+</html>'
       end.save
     else
       puts "existing layout: home-layout"
@@ -29,17 +29,17 @@ namespace :create do
       Layout.new do |s|
         s.name = "interior-layout"
         s.content = 
-          '<r:snippet name="head" />
-          <body>
+'<r:snippet name="head" />
+<body>
 
-            <div id="wrapper">
-              <r:snippet name="main-navigation" />
-              <r:content />
-              <r:snippet name="footer" />
-            </div>
+  <div id="wrapper">
+    <r:snippet name="main-nav" />
+    <r:content />
+    <r:snippet name="footer" />
+  </div>
 
-          </body>
-          </html>'
+</body>
+</html>'
       end.save
     else
       puts "existing layout: interior-layout"
