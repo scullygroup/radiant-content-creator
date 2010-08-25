@@ -3,11 +3,12 @@ namespace :create do
   desc 'Creates basic snippets for a Radiant Site.'
   task :snippets, :needs => :environment do
 
-    if !Snippet.find_by_name("head").nil?
+    if Snippet.find_by_name("head").nil?
+      puts "creating new snippet: head"
       Snippet.new do |s|
         s.name = "head"
-        s.content = '
-          <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        s.content = 
+          '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
           <html xmlns="http://www.w3.org/1999/xhtml">
           <head>
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -34,20 +35,26 @@ namespace :create do
           <script src="/javascripts/base.js" type="text/javascript" charset="utf-8"></script>
           </head>'
       end.save
+    else
+      puts "existing snippet: head"
     end
     
-    if !Snippet.find_by_name("header").nil?
+    if Snippet.find_by_name("header").nil?
+      puts "creating new snippet: header"
       Snippet.new do |s|
         s.name = "header"
         s.content = ''
       end.save
+    else
+      puts "existing snippet: header"
     end
     
-    if !Snippet.find_by_name("main-nav").nil?
+    if Snippet.find_by_name("main-nav").nil?
+      puts "creating new snippet: main-nav"
       Snippet.new do |s|
         s.name = "main-nav"
-        s.content = '
-          <ul>
+        s.content = 
+          '<ul>
             <r:navigation urls="home: / | about: /about-us/ | faq: /faqs/ | contact: /contact">
               <r:normal><li class="<r:title />"><a href="<r:url />"><r:title /></a></li></r:normal>
               <r:here><li class="<r:title />"><a class="active" href="<r:url />"></a></li></r:here>
@@ -55,20 +62,26 @@ namespace :create do
             </r:navigation>
           </ul>'
       end.save
+    else
+      puts "existing snippet: main-nav"
     end
     
-    if !Snippet.find_by_name("footer").nil?
+    if Snippet.find_by_name("footer").nil?
+      puts "creating new snippet: footer"
       Snippet.new do |s|
         s.name = "footer"
         s.content = ''
       end.save
+    else
+      puts "existing snippet: footer"
     end
     
-    if !Snippet.find_by_name("sub-nav").nil?
+    if Snippet.find_by_name("sub-nav").nil?
+      puts "creating new snippet: sub-nav"
       Snippet.new do |s|
-        s.name = "footer"
-        s.content = '
-          <r:if_parent>
+        s.name = "sub-nav"
+        s.content =
+          '<r:if_parent>
             <r:parent>
               <r:snippet name="sub-nav" />
             </r:parent>
@@ -102,6 +115,8 @@ namespace :create do
             </ul>
           </r:unless_parent>'
       end.save
+    else
+      puts "existing snippet: sub-nav"
     end
     
   end
