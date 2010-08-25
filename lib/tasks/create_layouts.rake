@@ -9,11 +9,11 @@ namespace :create do
         s.name = "home-layout"
         s.content = 
           '<r:snippet name="head" />
-          <body>
+           <body>
 
             <div id="wrapper">
-              <r:snippet name="header" />
-              <!-- content html goes here -->
+              <r:snippet name="main-navigation" />
+              <r:content />
               <r:snippet name="footer" />
             </div>
 
@@ -33,8 +33,8 @@ namespace :create do
           <body>
 
             <div id="wrapper">
-              <r:snippet name="header" />
-              <!-- content html goes here -->
+              <r:snippet name="main-navigation" />
+              <r:content />
               <r:snippet name="footer" />
             </div>
 

@@ -46,7 +46,6 @@ h3. Snippets
 To create the following basic snippets run this rake task <pre>rake create:snippets</pre>
 
 * head
-* header
 * main-navigation
 * sub-nav
 * footer

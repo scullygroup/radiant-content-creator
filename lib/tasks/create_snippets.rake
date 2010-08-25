@@ -14,7 +14,7 @@ namespace :create do
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
           <!-- force IE8 to render as IE7 -->
           <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-          <title> | <r:page_title /></title>
+          <title> | <r:title /></title>
 
           <meta name="keywords" content="" />
           <meta name="description" content="" />
@@ -39,27 +39,22 @@ namespace :create do
       puts "existing snippet: head"
     end
     
-    if Snippet.find_by_name("header").nil?
-      puts "creating new snippet: header"
-      Snippet.new do |s|
-        s.name = "header"
-        s.content = ''
-      end.save
-    else
-      puts "existing snippet: header"
-    end
-    
     if Snippet.find_by_name("main-nav").nil?
       puts "creating new snippet: main-nav"
       Snippet.new do |s|
         s.name = "main-nav"
         s.content = 
           '<ul>
-            <r:navigation urls="home: / | about: /about-us/ | faq: /faqs/ | contact: /contact">
-              <r:normal><li class="<r:title />"><a href="<r:url />"><r:title /></a></li></r:normal>
-              <r:here><li class="<r:title />"><a class="active" href="<r:url />"></a></li></r:here>
-              <r:selected><li class="<r:title />" class="active"><a href="<r:url />"></a></li></r:selected>
-            </r:navigation>
+            <r:find url="/">
+              <r:children:each order="asc">
+                <r:if_self>
+                  <li id="<r:slug/>"><r:link class="active" /></li>
+                </r:if_self>
+                <r:unless_self>
+                  <li id="<r:slug/>"><r:link /></li>
+                </r:unless_self>
+              </r:children:each>
+            </r:find />
           </ul>'
       end.save
     else
