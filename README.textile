@@ -22,18 +22,20 @@ If you add to a sitemap.html, the task will let you know those pages existed and
 
 Load pages from "/public/sitemap.html" to the radiant site root "/" that are children of the "primary-navigation" node in your sitemap.html see examples/ for example structure.
 
-<code>rake create:page:fromhtml</code>
+<pre>rake create:page:fromhtml</pre>
 
 Load pages from "/public/filename.html" to the radiant site root.
 
-<code>rake create:page:fromhtml[filename.html]</code>
+<pre>rake create:page:fromhtml[filename.html]</pre>
 
 
 h3. Create single pages
 
 To add a single page without having to use the admin interface:
 
-* rake create:page:child[title,/path-to-a-radiant/page-parent] - creates a single page as a child of the passed url, default page url is "/" This task also fills in 2 paragraphs of lorem ipsum.
+<pre>rake create:page:child[title,/path-to-a-radiant/page-parent]</pre>
+
+Creates a single page as a child of the passed url, default page url is "/" This task also fills in 2 paragraphs of lorem ipsum.
 
 h2. Snippet/Layout Generation
 
@@ -41,7 +43,7 @@ The default snippets with each "design" radiant provides are a good start, but t
 
 h3. Snippets
 
-To create the following basic snippets run this rake task <code>rake create:snippets</code>
+To create the following basic snippets run this rake task <pre>rake create:snippets</pre>
 
 * head
 * header
@@ -51,7 +53,7 @@ To create the following basic snippets run this rake task <code>rake create:snip
 
 h3. Layouts
 
-To create the following basic layouts run this rake task <code>rake create:layouts</code>
+To create the following basic layouts run this rake task <pre>rake create:layouts</pre>
 
 * head
 * header
