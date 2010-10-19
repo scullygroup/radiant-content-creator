@@ -18,7 +18,7 @@ namespace :create do
         existing_page = Page.find_by_url("/#{args.parent}#{slugify(args.name)}")
         
         # test if the page exists
-        if existing_page.nil?
+        if existing_page.nil? || existing_page.class_name == "FileNotFoundPage"
           
           body_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et lacus sit amet enim euismod commodo. Suspendisse sed arcu. Aliquam lacus. Ut ac ipsum. Fusce nunc odio, blandit vel, porttitor vitae, aliquam eget, felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vitae ipsum. In urna. Donec ornare erat ullamcorper erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum nunc vitae neque. Nulla ultrices pulvinar metus. 
 
@@ -98,7 +98,7 @@ Phasellus turpis turpis, scelerisque sit amet, accumsan vel, sollicitudin a, eli
               existing_page = Page.find_by_url("#{path}#{item_slug}")
               
               # test if the page exists
-              if existing_page.nil?
+              if existing_page.nil? || existing_page.class_name == "FileNotFoundPage"
                 # create some test body copy
                 body_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et lacus sit amet enim euismod commodo. Suspendisse sed arcu. Aliquam lacus. Ut ac ipsum. Fusce nunc odio, blandit vel, porttitor vitae, aliquam eget, felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam vitae ipsum. In urna. Donec ornare erat ullamcorper erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum nunc vitae neque. Nulla ultrices pulvinar metus. 
 
